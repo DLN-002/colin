@@ -1,28 +1,17 @@
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava0, function (sprite, location) {
-    game.gameOver(false)
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile4`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Player, img`myTile4`, function (sprite, location) {
     game.gameOver(true)
 })
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile3`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Player, img`myTile3`, function (sprite, location) {
     tiles.setCurrentTilemap(tilemap`level5`)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 15))
-})
-scene.onOverlapTile(SpriteKind.Player, sprites.builtin.oceanSand4, function (sprite, location) {
-    tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 1))
-    tiles.setCurrentTilemap(tilemap`level3`)
-})
-scene.onOverlapTile(SpriteKind.Player, sprites.castle.tilePath5, function (sprite, location) {
-    tiles.setTileAt(location, assets.tile`myTile0`)
-    info.changeScoreBy(1)
-})
-scene.onOverlapTile(SpriteKind.Player, sprites.builtin.oceanSand0, function (sprite, location) {
-    tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 1))
-    tiles.setCurrentTilemap(tilemap`level2`)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, location) {
     tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 1))
     tiles.setCurrentTilemap(tilemap`level4`)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`transparency16`, function (sprite, location) {
+    tiles.setTileAt(location, assets.tile`myTile0`)
+    info.changeScoreBy(1)
 })
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
